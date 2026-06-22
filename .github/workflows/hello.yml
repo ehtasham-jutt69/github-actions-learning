@@ -1,23 +1,20 @@
-name: Linux Practice
+name: Repository Test
 
 on:
   push:
 
 jobs:
-  linux-job:
+  test:
 
     runs-on: ubuntu-latest
 
     steps:
 
-      - name: Current Directory
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Show Current Directory
         run: pwd
 
-      - name: Current User
-        run: whoami
-
-      - name: Current Date
-        run: date
-
-      - name: List Files
+      - name: Show Repository Files
         run: ls -la
