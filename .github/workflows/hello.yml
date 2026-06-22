@@ -1,14 +1,23 @@
-name: My First Workflow
+name: Linux Practice
 
 on:
   push:
 
 jobs:
-  hello-job:
+  linux-job:
 
     runs-on: ubuntu-latest
 
     steps:
 
-      - name: Print Message
-        run: echo "Hello Ehtasham! GitHub Actions is working."
+      - name: Current Directory
+        run: pwd
+
+      - name: Current User
+        run: whoami
+
+      - name: Current Date
+        run: date
+
+      - name: List Files
+        run: ls -la
