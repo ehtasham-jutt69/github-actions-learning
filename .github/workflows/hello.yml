@@ -1,10 +1,10 @@
-name: Repository Test
+name: Docker Build Test
 
 on:
   push:
 
 jobs:
-  test:
+  build:
 
     runs-on: ubuntu-latest
 
@@ -13,11 +13,8 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Show Current Directory
-        run: pwd
-
-      - name: Show Repository Files
+      - name: Show Files
         run: ls -la
 
- - name: Build Docker Image
+      - name: Build Docker Image
         run: docker build -t myapp .
